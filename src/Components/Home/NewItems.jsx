@@ -12,7 +12,7 @@ const NewItems = () => {
  
 
   return (
-    <div className=" py-2 bg-blue-200 px-16">
+    <div className=" py-10 bg-blue-200 px-16 ">
       <div>
         <h1 className="text-center font-bold text-3xl text-blue-600">
           Newest Arrival !!!

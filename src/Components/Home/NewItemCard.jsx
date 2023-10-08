@@ -19,10 +19,10 @@ const NewItemCard = ({ toy }) => {
 
   const expandIconStyle = {
     transition: "transform 0.5s, opacity 0.5s",
-    transform: active ? "translateY(-2rem)" : "translateY(0)",
+    transform: active ? "translateY(-4rem)" : "translateY(0)",
     opacity: active ? 1 : 0,
   padding: "2px",
-  backgroundColor: "#F279A6",
+  backgroundColor: "#ff007f",
   color: "white",
   fontSize: "30px",
   borderRadius: "5px",

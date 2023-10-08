@@ -11,6 +11,7 @@ import AuthProvider from "./Components/Provider/AuthProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Home from "./Components/Home/Home";
 import Detailpage from "./Components/ProductDetail/Detailpage";
+import AllToy from "./Components/ALLToy/AllToy";
 
 // import Privateroute from "./Component/PrivateRoute/Privateroute";
 
@@ -34,8 +35,8 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup />,
       },
-      {path: "/detail",
-      element: <Detailpage />,},
+      { path: "/detail", element: <Detailpage /> },
+      { path: "/alltoy", element: <AllToy /> },
       {
         path: "*",
         element: <Error />,

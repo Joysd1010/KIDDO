@@ -4,7 +4,7 @@ import { BsCoin } from "react-icons/bs";
 import { Ri24HoursFill } from "react-icons/ri";
 const SpecialService = () => {
   return (
-    <div className="px-20">
+    <div className="px-20 py-20">
       <div>
         <h1 className="text-center font-bold text-3xl text-blue-600">
           Our Exceptional Services
