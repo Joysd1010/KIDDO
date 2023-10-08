@@ -4,6 +4,7 @@ import { PiShoppingCartSimpleThin } from "react-icons/pi";
 import { FaUserAlt } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useProduct from "../../hooks/useProduct";
 // import useCart from "../hooks/useCart";
 
 const Header = () => {
@@ -37,17 +38,10 @@ const handlefocus=()=>{
 const handleBlur=()=>{
     setSearch(false)
 }
-  const [ALLToy, setToy] = useState([]);
+  const [ALLToy] = useProduct();
 
   const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/toy")
-      .then((res) => res.json())
-      .then((info) => {
-        setToy(info);
-        // setData(info);
-      });
-  }, []);
+  
 
   const filter = (event) => {
     setData(
@@ -56,7 +50,7 @@ const handleBlur=()=>{
       )
     );
   };
-  ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
+  // ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
     <div className=" fixed z-20 w-screen bg-white px-10 py-1 ">
       {/* -----------------------Navbar--------------------------- */}

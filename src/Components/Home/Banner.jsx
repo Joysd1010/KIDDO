@@ -23,7 +23,7 @@ const [text] = useTypewriter({
  }) 
 
   return (
-    <div className="grid grid-cols-2 pt-16 items-center px-20 bg-[#FFB6C5]">
+    <div className=" grid grid-cols-2 pt-16 items-center px-20 bg-[#FFB6C5]">
       <div>
         <img className=" w-[350px]" src="https://i.postimg.cc/43nbYpYM/child-model.png" />
       </div>

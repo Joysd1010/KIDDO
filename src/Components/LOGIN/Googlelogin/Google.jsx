@@ -51,7 +51,7 @@ const Google = () => {
     <div>
       <div className="divider"></div>
       <div  onClick={handleGoogleSignIn}
-          className="flex items-center shadow-lg duration-700 hover:shadow-[#5572e6] shadow-[#dd7474] gap-2 px-10 py-1 my-2 text-xl font-semibold text-blue-700 bg-white border rounded-lg "
+          className="flex items-center justify-center shadow-lg duration-700 hover:shadow-[#5572e6] shadow-[#dd7474] gap-2  py-3 my-2 text-xl font-semibold text-blue-700 bg-white border rounded-lg "
         >
           <FcGoogle /> Login With Google
         

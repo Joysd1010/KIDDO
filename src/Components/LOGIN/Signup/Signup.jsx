@@ -196,7 +196,7 @@ const Signup = () => {
             </div>
           </form>
 
-          <p className="pl-5 py-3 text-xl">
+          <p className=" py-1 text-center text-xl">
             <small>
               Already have an account{" "}
               <Link to="/login" className="font-semibold text-blue-700 ">
@@ -205,7 +205,7 @@ const Signup = () => {
             </small>
           </p>
 
-          <div className=" pb-10">
+          <div className=" mx-8 pb-10">
             <GoggleLogin />
           </div>
         </div>
