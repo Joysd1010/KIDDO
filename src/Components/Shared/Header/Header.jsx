@@ -58,7 +58,7 @@ const handleBlur=()=>{
   };
   ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
-    <div className=" fixed w-screen bg-white px-10 py-1 ">
+    <div className=" fixed z-20 w-screen bg-white px-10 py-1 ">
       {/* -----------------------Navbar--------------------------- */}
 
       <div className="flex items-center justify-between">
