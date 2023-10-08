@@ -63,7 +63,7 @@ const Signup = () => {
   };
 
   return (
-    <div className=" mx-20 px-10">
+    <div className=" pt-16 mx-20 px-10">
       <div className="grid grid-cols-2 items-center ">
         <div>
           <img src="https://i.postimg.cc/MTyTTzQn/ezgif-com-optimize-1.gif" />

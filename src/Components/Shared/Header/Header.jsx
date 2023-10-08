@@ -56,9 +56,9 @@ const handleBlur=()=>{
       )
     );
   };
-//   ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
+  ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
-    <div className=" bg-white px-10 py-2 ">
+    <div className=" fixed w-screen bg-white px-10 py-1 ">
       {/* -----------------------Navbar--------------------------- */}
 
       <div className="flex items-center justify-between">
@@ -127,7 +127,7 @@ const handleBlur=()=>{
             to={"/"}
             className={({ isActive }) =>
               isActive
-                ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600  duration-300"
+                ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600  ease-out duration-700"
                 : " font-bold text-base md:text-xl px-5  duration-300"
             }
           >
@@ -144,7 +144,7 @@ const handleBlur=()=>{
             to={"/"}
             className={({ isActive }) =>
               isActive
-                ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600  duration-300"
+                ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600   ease-out duration-700"
                 : " font-bold text-base md:text-xl px-5  duration-300"
             }
           >
