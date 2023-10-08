@@ -1,5 +1,6 @@
 [
     {
+      "rating":4,
       "toy_id": 1,
       "toy_name": "Mystic Dragon Plush",
       "materials": ["Plush", "Polyester Fiber"],
@@ -13,6 +14,7 @@
       "seller_id": 1234
     },
     {
+      "rating":4,
       "toy_id": 2,
       "toy_name": "Galaxy Explorer Teddy",
       "materials": ["Plush", "Polyester Fiber"],
@@ -26,6 +28,7 @@
       "seller_id": 1234
     },
     {
+      "rating":4,
       "toy_id": 3,
       "toy_name": "Crystal Unicorn Showpiece",
       "materials": ["Resin"],
@@ -39,6 +42,7 @@
       "seller_id": 1234
     },
     {
+      "rating":4,
       "toy_id": 4,
       "toy_name": "Enchanted Forest Puzzle",
       "materials": ["Wood"],
@@ -52,7 +56,8 @@
       "seller_id": 1234
     },
     {
-        "toy_id": 5,
+      "rating":4,  
+      "toy_id": 5,
         "toy_name": "Dragon ",
         "materials": ["Plush", "Polyester Fiber"],
         "description": "A magical dragon plush for fantasy lovers.",
@@ -65,6 +70,7 @@
         "seller_id": 1234
     },
       {
+        "rating":4,
         "toy_id": 6,
         "toy_name": "Explorer Teddy",
         "materials": ["Plush", "Polyester Fiber"],
@@ -78,6 +84,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 7,
         "toy_name": "Crystal Unicorn Showpiece",
         "materials": ["Resin"],
@@ -91,6 +98,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 8,
         "toy_name": "Enchanted Forest Puzzle",
         "materials": ["Wood"],
@@ -104,6 +112,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 9,
         "toy_name": "Ocean Adventure Playset",
         "materials": ["Plastic"],
@@ -117,6 +126,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 10,
         "toy_name": "Safari Explorer Teddy",
         "materials": ["Plush", "Polyester Fiber"],
@@ -130,6 +140,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 11,
         "toy_name": "Space Odyssey Puzzle",
         "materials": ["Cardboard"],
@@ -143,6 +154,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 12,
         "toy_name": "Enchanted Castle Showpiece",
         "materials": ["Resin"],
@@ -156,6 +168,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 13,
         "toy_name": "Robot Building Kit",
         "materials": ["Plastic", "Metal"],
@@ -169,6 +182,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 14,
         "toy_name": "Magical Unicorn Plush",
         "materials": ["Plush", "Polyester Fiber"],
@@ -182,6 +196,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 15,
         "toy_name": "Space Explorer Action Figure",
         "materials": ["Plastic"],
@@ -195,6 +210,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 16,
         "toy_name": "Dinosaur Fossil Dig Kit",
         "materials": ["Plastic", "Fossil Replicas"],
@@ -208,6 +224,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 17,
         "toy_name": "https://i.postimg.cc/KjmMMrvZ/KIDDO-logo-13.png",
         "materials": ["Plastic"],
@@ -221,6 +238,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 18,
         "toy_name": "Jungle Safari Plush Set",
         "materials": ["Plush", "Polyester Fiber"],
@@ -234,6 +252,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 19,
         "toy_name": "Glow-in-the-Dark Puzzle",
         "materials": ["Cardboard"],
@@ -247,6 +266,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 20,
         "toy_name": "Fantasy Castle Playset",
         "materials": ["Plastic"],
@@ -259,6 +279,7 @@
         "seller_name": "Joy Sutradhar",
         "seller_id": 1234
       },{
+        "rating":4,
         "toy_id": 21,
         "toy_name": "Space Adventure Playset",
         "materials": ["Plastic"],
@@ -272,6 +293,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 22,
         "toy_name": "Dinosaur Discovery Kit",
         "materials": ["Plastic", "Fossil Replicas"],
@@ -285,6 +307,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 23,
         "toy_name": "Enchanted Garden Puzzle",
         "materials": ["Cardboard"],
@@ -298,6 +321,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 24,
         "toy_name": "Adorable Animal Plush Set",
         "materials": ["Plush", "Polyester Fiber"],
@@ -311,6 +335,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 25,
         "toy_name": "Magic Castle Playset",
         "materials": ["Plastic"],
@@ -324,6 +349,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 26,
         "toy_name": "Ocean Explorer Submarine",
         "materials": ["Plastic"],
@@ -337,6 +363,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 27,
         "toy_name": "Woodland Creatures Puzzle",
         "materials": ["Cardboard"],
@@ -350,6 +377,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 28,
         "toy_name": "Fire-Breathing Dragon Plush",
         "materials": ["Plush", "Polyester Fiber"],
@@ -363,6 +391,7 @@
         "seller_id": 1234
       },
        {
+        "rating":4,
         "toy_id": 29,
         "toy_name": "Wildlife Safari Adventure Set",
         "materials": ["Plastic"],
@@ -376,6 +405,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 30,
         "toy_name": "Outer Space Puzzle",
         "materials": ["Cardboard"],
@@ -389,6 +419,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 31,
         "toy_name": "Adventurous Pirate Ship Playset",
         "materials": ["Plastic"],
@@ -402,6 +433,7 @@
         "seller_id": 1234
       },
       {
+        "rating":4,
         "toy_id": 32,
         "toy_name": "Jungle Explorer Action Figure",
         "materials": ["Plastic"],

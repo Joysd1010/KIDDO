@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{font-family: 'Exo 2', sans-serif;
+*{
+  font-family: 'Exo 2', sans-serif;
 font-family: 'Fredoka', sans-serif;
-font-family: 'Permanent Marker', cursive;
-font-family: 'Poppins', sans-serif;}
+}

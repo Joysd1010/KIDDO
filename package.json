@@ -10,18 +10,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.35.3",
+    "axios": "^1.5.1",
+    "firebase": "^10.4.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.46.2",
+    "react-icons": "^4.11.0",
+    "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.16.0",
-    "sort-by": "^1.2.0"
+    "react-stars": "^2.2.5",
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
+    "daisyui": "^3.9.2",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
