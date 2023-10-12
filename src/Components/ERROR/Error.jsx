@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div>
+    <div className=" pt-28">
       <div className=" absolute md:top-36 md:left-1/3 text-gray-600 text-4xl font-bold p-2 rounded-lg hover:text-blue-400 duration-500">
         <h1>OOPs The Page Not Found</h1>
       </div>

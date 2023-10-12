@@ -12,6 +12,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Home from "./Components/Home/Home";
 import Detailpage from "./Components/ProductDetail/Detailpage";
 import AllToy from "./Components/ALLToy/AllToy";
+import ContactUS from "./Components/Contact/ContactUS";
+import DashboardNav from "./Components/DashBoard/DashboardNav/DashboardNav";
+import Mycart from "./Components/DashBoard/User/Mycart";
 
 // import Privateroute from "./Component/PrivateRoute/Privateroute";
 
@@ -25,7 +28,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://serverco-de.vercel.app/course"),
       },
       {
         path: "/login",
@@ -35,8 +37,19 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup />,
       },
-      { path: "/detail", element: <Detailpage /> },
+      {
+        path: "detail/:id",
+        element: <Detailpage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toys/${params.id}`),
+      },
+      {
+        path: "/cart",
+        element: <Mycart />,
+      },
+
       { path: "/alltoy", element: <AllToy /> },
+      { path: "/contact", element: <ContactUS /> },
       {
         path: "*",
         element: <Error />,

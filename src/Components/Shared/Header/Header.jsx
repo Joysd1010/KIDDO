@@ -1,15 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
 import { FaUserAlt } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useProduct from "../../hooks/useProduct";
-// import useCart from "../hooks/useCart";
+import useCart from "../..//hooks/useCart";
+import { CiHeart } from "react-icons/ci";
+import useWish from "../../hooks/useWish";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  //   const [cart]=useCart();
+    const [cart]=useCart();
+    const [wish]=useWish();
+
+    const navigate = useNavigate();
+
+    const navigateToDetail = (_id) => {
+      navigate(`/detail/${_id}`);
+    };
+
+
   const [search, setSearch] = useState(false);
   const [underline, setUnderline] = useState(false);
   const [underline1, setUnderline1] = useState(false);
@@ -36,7 +47,9 @@ const handlefocus=()=>{
     setSearch(true)
 }
 const handleBlur=()=>{
-    setSearch(false)
+  setTimeout(() => {
+    setSearch(false);
+  }, 200)
 }
   const [ALLToy] = useProduct();
 
@@ -48,7 +61,8 @@ const handleBlur=()=>{
       ALLToy.filter((object) =>
         object.toy_name.toLowerCase().includes(event.target.value)
       )
-    );
+    )
+    setSearch(true);
   };
   // ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
@@ -89,11 +103,13 @@ const handleBlur=()=>{
               </button>
             </div>
             <div className=" duration-300 absolute">
-              {search&&data.slice(0, 8).map((toy) => (
-                <div className=" px-5 flex gap-3 p-2 border-2 border-[#F379A7] bg-white ml-1 rounded-2xl" key={toy._id}>
+              {search&&data.slice(0, 12).map((toy) => (
+              
+                 <div onClick={()=>{navigateToDetail(toy._id)}}  key={toy._id} className=" hover:scale-105 duration-500 px-5 flex gap-3 p-2 border-2 border-[#F379A7] bg-white ml-1 rounded-2xl" >
                   <img className=" w-6" src={toy.image_link} />{" "}
                   <h1 className=" font-medium">{toy.toy_name}</h1>
                 </div>
+                
               ))}
             </div>
           </div>
@@ -118,7 +134,7 @@ const handleBlur=()=>{
           <NavLink
             onMouseEnter={handleUnderline1}
             onMouseLeave={handleUnderlineremove1}
-            to={"/"}
+            to={"alltoy"}
             className={({ isActive }) =>
               isActive
                 ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600  ease-out duration-700"
@@ -135,7 +151,7 @@ const handleBlur=()=>{
           <NavLink
             onMouseEnter={handleUnderline2}
             onMouseLeave={handleUnderlineremove2}
-            to={"/"}
+            to={"contact"}
             className={({ isActive }) =>
               isActive
                 ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600   ease-out duration-700"
@@ -151,18 +167,33 @@ const handleBlur=()=>{
           </NavLink>
         </div>
         <div className="flex justify-between items-center gap-4">
-          <NavLink
+              <div className="flex items-center gap-3">
+                <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              isActive
+                ? " font-bold text-base md:text-xl px-5 py-2 rounded-md text-blue-400  duration-300 "
+                : " font-bold text-base md:text-xl px-5  duration-300 "
+            }
+          
+            
+          >
+            <PiShoppingCartSimpleThin size={30} /> {cart.length>0&&<p className=" text-xs bottom-9 left-4 text-center p-[1px] text-white rounded-full relative bg-pink-600">{cart?.length}</p>}
+          </NavLink>
+          {/* <NavLink
             to="/login"
             className={({ isActive }) =>
               isActive
-                ? " font-bold text-base md:text-xl px-5 py-2 rounded-md text-blue-400  duration-300 tooltip tooltip-open tooltip-primary"
-                : " font-bold text-base md:text-xl px-5  duration-300 tooltip  tooltip-open tooltip-info"
+                ? " font-bold text-base md:text-xl px-5 py-2 rounded-md text-blue-400  duration-300 "
+                : " font-bold text-base md:text-xl px-5  duration-300 "
             }
-            data-tip={0}
-            // data-tip={`+${cart?.length||0}`}
+          
+            
           >
-            <PiShoppingCartSimpleThin size={30} />
-          </NavLink>
+            <CiHeart size={30} /> {cart.length>0&&<p className=" text-xs bottom-9 left-4 text-center p-[1px] text-white rounded-full relative bg-pink-600">{wish?.length}</p>}
+          </NavLink> */}
+              </div>
+          
           {user?.photoURL ? (
             <img
               src={user.photoURL}
