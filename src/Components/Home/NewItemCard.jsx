@@ -82,7 +82,7 @@ const NewItemCard = ({ toy }) => {
       seller_name,
       seller_id
         };
-        fetch("http://localhost:5000/cart", {
+        fetch("https://kiddo-back-end-joysd1010.vercel.app/cart", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -138,7 +138,7 @@ const NewItemCard = ({ toy }) => {
     seller_name,
     seller_id
       };
-      fetch("http://localhost:5000/wish", {
+      fetch("https://kiddo-back-end-joysd1010.vercel.app/wish", {
         method: "POST",
         headers: {
           "content-type": "application/json",

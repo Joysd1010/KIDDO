@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         path: "detail/:id",
         element: <Detailpage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://kiddo-back-end-joysd1010.vercel.app/toys/${params.id}`),
       },
       {
         path: "/cart",

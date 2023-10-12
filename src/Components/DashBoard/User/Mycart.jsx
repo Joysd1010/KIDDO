@@ -39,7 +39,7 @@ const Mycart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log('clicked')
-        fetch(`http://localhost:5000/cart/${item._id}`, {
+        fetch(`https://kiddo-back-end-joysd1010.vercel.app/cart/${item._id}`, {
           method: "DELETE",headers: {
             "content-type": "application/json",
           }
