@@ -26,8 +26,10 @@
     "react-simple-typewriter": "^5.0.1",
     "react-stars": "^2.2.5",
     "react-tabs": "^6.0.2",
+    "react-tsparticles": "^2.12.2",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.7.31"
+    "sweetalert2": "^11.7.31",
+    "tsparticles": "^2.12.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

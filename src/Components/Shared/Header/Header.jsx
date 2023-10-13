@@ -8,6 +8,7 @@ import useProduct from "../../hooks/useProduct";
 import useCart from "../..//hooks/useCart";
 import { CiHeart } from "react-icons/ci";
 import useWish from "../../hooks/useWish";
+import useAdmin from "../../hooks/useAdmin";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -19,12 +20,14 @@ const Header = () => {
     const navigateToDetail = (_id) => {
       navigate(`/detail/${_id}`);
     };
+const logged=useAdmin();
 
 
   const [search, setSearch] = useState(false);
   const [underline, setUnderline] = useState(false);
   const [underline1, setUnderline1] = useState(false);
   const [underline2, setUnderline2] = useState(false);
+  const [underline3, setUnderline3] = useState(false);
   const handleUnderline = () => {
     setUnderline(true);
   };
@@ -42,6 +45,12 @@ const Header = () => {
   };
   const handleUnderlineremove2 = () => {
     setUnderline2(false);
+  };
+  const handleUnderline3 = () => {
+    setUnderline3(true);
+  };
+  const handleUnderlineremove3 = () => {
+    setUnderline3(false);
   };
 const handlefocus=()=>{
     setSearch(true)
@@ -148,6 +157,7 @@ const handleBlur=()=>{
               } mx-auto border-2 duration-500`}
             />
           </NavLink>
+        
           <NavLink
             onMouseEnter={handleUnderline2}
             onMouseLeave={handleUnderlineremove2}
@@ -165,10 +175,29 @@ const handleBlur=()=>{
               } mx-auto border-2 duration-500`}
             />
           </NavLink>
+ 
+
+
         </div>
         <div className="flex justify-between items-center gap-4">
               <div className="flex items-center gap-3">
-                <NavLink
+              {logged ?<NavLink
+            onMouseEnter={handleUnderline3}
+            onMouseLeave={handleUnderlineremove3}
+            to={"Admin"}
+            className={({ isActive }) =>
+              isActive
+                ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600   ease-out duration-700"
+                : " font-bold text-base md:text-xl px-5  duration-300"
+            }
+          >
+            <p>Admin Panel</p>{" "}
+            <hr
+              className={` border-blue-900 w-0 ${
+                underline3 && "w-[90px]"
+              } mx-auto border-2 duration-500`}
+            />
+          </NavLink>:<NavLink
             to="/cart"
             className={({ isActive }) =>
               isActive
@@ -179,19 +208,9 @@ const handleBlur=()=>{
             
           >
             <PiShoppingCartSimpleThin size={30} /> {cart.length>0&&<p className=" text-xs bottom-9 left-4 text-center p-[1px] text-white rounded-full relative bg-pink-600">{cart?.length}</p>}
-          </NavLink>
-          {/* <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive
-                ? " font-bold text-base md:text-xl px-5 py-2 rounded-md text-blue-400  duration-300 "
-                : " font-bold text-base md:text-xl px-5  duration-300 "
-            }
-          
-            
-          >
-            <CiHeart size={30} /> {cart.length>0&&<p className=" text-xs bottom-9 left-4 text-center p-[1px] text-white rounded-full relative bg-pink-600">{wish?.length}</p>}
-          </NavLink> */}
+          </NavLink>} 
+                
+        
               </div>
           
           {user?.photoURL ? (

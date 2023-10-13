@@ -4,7 +4,7 @@ import { HiArrowsExpand } from "react-icons/hi";
 import { BsCart2, BsHeart } from "react-icons/bs";
 import Rating from "react-rating";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import useCart from "../hooks/useCart";
@@ -60,7 +60,7 @@ const NewItemCard = ({ toy }) => {
   const wishExist=wish.filter(item=>item.toy_id==toy_id)
   console.log(wishExist.length)
  
-
+const navigate=useNavigate()
   const handleCart = () => {
     if (user) {
       
@@ -108,7 +108,8 @@ const NewItemCard = ({ toy }) => {
         Swal.fire({
           icon: 'info',
           title: 'Oops...',
-          text: 'This Product is already in your Cart',            
+          text: 'This Product is already in your Cart', 
+                  
         })
       }            
               }
@@ -116,8 +117,13 @@ const NewItemCard = ({ toy }) => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Please Sign in to add this item to Cart',            
-          })
+            text: 'Please Sign in to add this item to Cart',  
+            showConfirmButton:true,             
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate('/login')
+            }
+          });
     }
   };
   const handleWishlist = () => {
