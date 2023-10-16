@@ -2,13 +2,15 @@ import React from "react";
 import { BsCheck } from "react-icons/bs";
 import { FaRegStar, FaStar, FaStarHalf } from "react-icons/fa";
 import Rating from "react-rating";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import useCart from "../hooks/useCart";
 
 const Detailpage = () => {
     const {user}=useAuth()
+    const navigate=useNavigate()
+
     const [,refetch]=useCart()
   const Toy = useLoaderData();
   const {
@@ -69,7 +71,11 @@ const Detailpage = () => {
             icon: 'error',
             title: 'Oops...',
             text: 'Please Sign in to add this item to Cart',            
-          })
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate('/login')
+            }
+          });
     }
   };
   const handleWishlist = () => {
@@ -131,7 +137,7 @@ const Detailpage = () => {
 
   return (
     <div className="">
-    <div className="grid grid-cols-2 pt-28">
+    <div className="grid grid-cols-1 md:grid-cols-2 pt-28">
       <div className=" px-10">
         <img src={image_link} />
       </div>

@@ -49,8 +49,8 @@ const Login = () => {
       {/* <Helmet>
           <title>Sumner Sports camp | Login</title>
         </Helmet> */}
-      <div className=" py-10 px-10 mx-20 ">
-        <div className="grid grid-cols-2 gap-36">
+      <div className=" py-10 px-3 md:px-10 md:mx-20 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-36">
           <div>
             <img
               className=" w-full"

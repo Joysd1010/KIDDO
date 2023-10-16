@@ -4,13 +4,13 @@ import Brands from './Brands';
 import SpecialService from './SpecialService';
 import NewItems from './NewItems';
 import Offer from './Offer';
-import Particle from '../Particle';
+
 
 const Home = () => {
     return (
         <div className=' '>
             <Banner />
-               <Brands/>
+            <Brands/>
             <SpecialService/>
             <NewItems/>
             <Offer/>

@@ -193,11 +193,7 @@ const navigate=useNavigate()
 
 
   return (
-    <div
-      // onMouseEnter={handleEnter}
-      // onMouseLeave={handleLeave}
-      className="bg-white rounded-md overflow-hidden "
-    >
+    <div      className="bg-white rounded-md overflow-hidden "    >
       <div>
         <img className="w-full" src={image_link} />
       </div>

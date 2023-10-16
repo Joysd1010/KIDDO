@@ -10,8 +10,8 @@ const SpecialService = () => {
           Our Exceptional Services
         </h1>
       </div>
-      <hr className="border-2 border-gray-600  w-1/3 mx-auto my-2" />
-      <div className=" py-5 grid grid-cols-3 gap-5">
+      <hr className="border-2 border-gray-600  w-2/3 md:w-1/3 mx-auto my-2" />
+      <div className=" py-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         <div className=" border-2 px-3 text-pink-400 rounded-md hover:text-pink-700 hover:border-pink-600 border-pink-200">
           <CiDeliveryTruck  className="mx-auto my-3" size={60}/>
           <h1 className="text-center font-bold text-3xl text-gray-600">Free Delivery</h1>

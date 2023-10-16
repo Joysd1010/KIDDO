@@ -9,9 +9,9 @@ const ContactUS = () => {
           Get in touch with us
         </h1>
       </div>
-      <hr className="border-2 border-gray-600 w-1/3 mx-auto mt-2" />
+      <hr className="border-2 border-gray-600 w-2/3 md:w-1/3 mx-auto mt-2" />
 
-      <div className="px-20 py-8 grid-cols-3 grid gap-16">
+      <div className="px-20 py-8 grid-cols-1 md:grid-cols-3 grid gap-16">
         <div className="flex hover:scale-110 duration-500 flex-col items-center gap-2 shadow-blue-500  shadow-lg rounded-xl p-5">
           <GrMapLocation size={50} />
           <h1 className=" text-pink-900 text-4xl font-[900]">Address</h1>

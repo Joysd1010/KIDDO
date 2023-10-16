@@ -1,7 +1,8 @@
 import React,{useContext} from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from "../../Provider/AuthProvider";
+// import {  } from "../Privateroute/Privateroute";
 import { Dna } from 'react-loader-spinner'
+import { AuthContext } from '../Provider/AuthProvider';
 
 
 const Privateroute = ({children}) => {

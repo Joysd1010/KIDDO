@@ -6,9 +6,9 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="  bg-[#E6E6FA]">
-      <div className=" px-10 py-2 items-start grid grid-cols-3">
+      <div className="px-3 md:px-10 py-2 items-start grid gap-3 md:grid-cols-3">
         {/* -------------------------------------Logo part of footer ------------------------------------ */}
-        <div className=" w-96">
+        <div className=" w-64 md:w-96">
           <div className="flex items-center gap-3">
             <img
               className=" w-20"
@@ -30,7 +30,7 @@ const Footer = () => {
         {/* -------------------------------------Link part of footer ------------------------------------ */}
         <div className=" md: pt-5">
           <h1 className=" text-2xl font-semibold">Important Links</h1>
-          <div className="text-base flex flex-col gap-3 underline">
+          <div className="text-base flex flex-col gap-3 text-pink-900">
             <NavLink className={`hover:translate-x-2 duration-300`} to={"/"}>Home </NavLink>
             <NavLink className={`hover:translate-x-2 duration-300`} to={"toy"}>Toys </NavLink>
             <NavLink className={`hover:translate-x-2 duration-300`} to={"contact"}>Contact Us </NavLink>

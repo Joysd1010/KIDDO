@@ -63,8 +63,8 @@ const Signup = () => {
   };
 
   return (
-    <div className=" pt-16 mx-20 px-10">
-      <div className="grid grid-cols-2 items-center ">
+    <div className=" pt-20 md:mx-20 px-3 md:px-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center ">
         <div>
           <img src="https://i.postimg.cc/MTyTTzQn/ezgif-com-optimize-1.gif" />
         </div>
@@ -159,8 +159,8 @@ const Signup = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="text-xl font-semibold label-text">
-                    Confirm Password
+                  <span className="text-xl font-semibold label-text flex gap-2">
+                    Confirm <span className="hidden md:block">Password</span> 
                   </span>
                 </label>
                 <input

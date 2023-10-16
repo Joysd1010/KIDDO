@@ -6,7 +6,8 @@ import { GoSearch } from "react-icons/go";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useProduct from "../../hooks/useProduct";
 import useCart from "../..//hooks/useCart";
-import { CiHeart } from "react-icons/ci";
+import { GiSplitCross } from "react-icons/gi";
+import { ImMenu } from "react-icons/im";
 import useWish from "../../hooks/useWish";
 import useAdmin from "../../hooks/useAdmin";
 
@@ -73,29 +74,37 @@ const handleBlur=()=>{
     )
     setSearch(true);
   };
+  const [menu, setMenu] = useState(true);
+  const handleMenuOpen = () => {
+    setMenu(false);
+  };
+  const handleMenuClose = () => {
+    setMenu(true);
+  };
+
+
   // ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
-    <div className=" fixed z-20 w-screen bg-white px-10 py-1 ">
+    <div className=" fixed z-20 w-screen bg-white px-3 md:px-10 py-1 ">
       {/* -----------------------Navbar--------------------------- */}
 
       <div className="flex items-center justify-between">
         {/* -------------------logo-------------------------------- */}
         <div className="flex gap-1 items-center">
           <img
-            className="w-24"
+            className="w-20 md:w-24"
             src="https://i.postimg.cc/NfzKswTG/KIDDO-logo.png"
             alt=""
           />
-          <NavLink to={"/"} className="text-gray-600 text-2xl font-bold">
+          <NavLink to={"/"} className="text-gray-600 text-lg md:text-2xl font-bold">
             KIDDO
           </NavLink>
-        </div>
-        <div className=" flex  items-center gap-2">
+
           {/* ----------------------Search Bar--------------------- */}
           <div>
-            <div className=" rounded-r-full rounded-l-full bg-[#F379A7] hover:bg-[#55D1E6]  flex items-center ">
+            <div className="md:ml-5 ml-3 rounded-r-full rounded-l-full bg-[#F379A7] hover:bg-[#55D1E6]  flex items-center ">
               <input
-                className=" border-2 border-[#F379A7] hover:border-[#55D1E6]    pl-3 pr-16 py-2 rounded-l-full outline-none"
+                className=" border-2 border-[#F379A7] hover:border-[#55D1E6]  w-28 md:w-full  pl-3 md:pr-16 py-2 rounded-l-full outline-none"
                 onChange={filter}
                 onBlur={handleBlur}
                 onFocus={handlefocus}
@@ -112,18 +121,22 @@ const handleBlur=()=>{
               </button>
             </div>
             <div className=" duration-300 absolute">
-              {search&&data.slice(0, 12).map((toy) => (
+              {search&&data.slice(0, 10).map((toy) => (
               
-                 <div onClick={()=>{navigateToDetail(toy._id)}}  key={toy._id} className=" hover:scale-105 duration-500 px-5 flex gap-3 p-2 border-2 border-[#F379A7] bg-white ml-1 rounded-2xl" >
-                  <img className=" w-6" src={toy.image_link} />{" "}
+                 <div onClick={()=>{navigateToDetail(toy._id)}}  key={toy._id} className=" hover:scale-105 duration-500 px-1 md:px-5 flex gap-3 p-2 border-2 border-[#F379A7] bg-white md:ml-5 ml-1 rounded-2xl" >
+                  <img className=" w-6 md:rounded-md" src={toy.image_link} />{" "}
                   <h1 className=" font-medium">{toy.toy_name}</h1>
                 </div>
                 
               ))}
             </div>
           </div>
+        </div>
+        
+        <div className={`flex md:static absolute  md:flex-row flex-col justify-between items-start md:items-center gap-2 md:gap-4 ${!menu?"top-20 right-1 md:px-0 px-5 bg-white py-2 duration-700 ":"top-20 -right-40 duration-700"}`}>
 
-          <NavLink
+      
+        <NavLink
             onMouseEnter={handleUnderline}
             onMouseLeave={handleUnderlineremove}
             to={"/"}
@@ -135,11 +148,12 @@ const handleBlur=()=>{
           >
             <p>Home</p>{" "}
             <hr
-              className={` border-blue-900 w-0 ${
+              className={`md:block hidden border-blue-900 w-0 ${
                 underline && "w-[50px]"
               } mx-auto border-2 duration-500`}
             />
           </NavLink>
+
           <NavLink
             onMouseEnter={handleUnderline1}
             onMouseLeave={handleUnderlineremove1}
@@ -152,7 +166,7 @@ const handleBlur=()=>{
           >
             <p>Toys</p>{" "}
             <hr
-              className={` border-blue-900 w-0 ${
+              className={`md:block hidden border-blue-900 w-0 ${
                 underline1 && "w-[40px]"
               } mx-auto border-2 duration-500`}
             />
@@ -170,7 +184,7 @@ const handleBlur=()=>{
           >
             <p>Contact Us</p>{" "}
             <hr
-              className={` border-blue-900 w-0 ${
+              className={`md:block hidden border-blue-900 w-0 ${
                 underline2 && "w-[90px]"
               } mx-auto border-2 duration-500`}
             />
@@ -178,8 +192,6 @@ const handleBlur=()=>{
  
 
 
-        </div>
-        <div className="flex justify-between items-center gap-4">
               <div className="flex items-center gap-3">
               {logged ?<NavLink
             onMouseEnter={handleUnderline3}
@@ -219,7 +231,7 @@ const handleBlur=()=>{
               className=" w-16 rounded-full p-2 border-2 border-r-slate-800 border-l-slate-800"
             />
           ) : (
-            <FaUserAlt />
+            <FaUserAlt className="md:ml-0 ml-5 "/>
           )}
 
           {!user ? (
@@ -243,6 +255,17 @@ const handleBlur=()=>{
             </div>
           )}
         </div>
+        <div className=" md:hidden ml-5">
+            {menu ? (
+              <div className="   rounded-lg">
+                <ImMenu onClick={handleMenuOpen} size={25} />
+              </div>
+            ) : (
+              <div className=" rotate-90 duration-300  rounded-lg">
+                <GiSplitCross onClick={handleMenuClose} size={25} />
+              </div>
+            )}
+          </div>
       </div>
     </div>
   );

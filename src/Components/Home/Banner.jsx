@@ -1,6 +1,6 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import Particle from "../Particle";
+
 
 
 const Banner = () => {
@@ -25,14 +25,14 @@ const [text] = useTypewriter({
 
   return (
     <div  >
-      <canvas id="canvas" width="100" height="100"></canvas>
-    <div className=" grid grid-cols-2 pt-16 items-center px-20 bg-[#FFB6C5]">
+      
+    <div className=" grid grid-cols-2 gap-3 md:gap-0 pt-16 items-center px-3 md:px-20 bg-[#FFB6C5]">
       
       <div>
-        <img className=" w-[350px]" src="https://i.postimg.cc/43nbYpYM/child-model.png" />
+        <img className=" w-64 md:w-[350px]" src="https://i.postimg.cc/43nbYpYM/child-model.png" />
       </div>
       <div>
-      <h1 className="text-5xl font-bold text-indigo-500">KIDDO where Imagination meets Play<br></br> <br /> <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-800'> {text}</span>
+      <h1 className="text-lg md:text-5xl font-bold text-indigo-500">KIDDO where Imagination meets Play<br></br> <br /> <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-800'> {text}</span>
             <span><Cursor  cursorStyle="."/></span></h1>
       </div>
     </div></div>

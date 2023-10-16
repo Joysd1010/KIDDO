@@ -16,6 +16,7 @@ import ContactUS from "./Components/Contact/ContactUS";
 import DashboardNav from "./Components/DashBoard/DashboardNav/DashboardNav";
 import Mycart from "./Components/DashBoard/User/Mycart";
 import Seller from "./Components/DashBoard/Seller/Seller";
+import Privateroute from "./Components/Privateroute/Privateroute";
 
 // import Privateroute from "./Component/PrivateRoute/Privateroute";
 
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Mycart />,
+        element: <Privateroute><Mycart /></Privateroute>,
       },
       {
         path: "/Admin",
