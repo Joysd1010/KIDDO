@@ -25,6 +25,7 @@ const [text] = useTypewriter({
 
   return (
     <div  >
+      <canvas id="canvas" width="100" height="100"></canvas>
     <div className=" grid grid-cols-2 pt-16 items-center px-20 bg-[#FFB6C5]">
       
       <div>
