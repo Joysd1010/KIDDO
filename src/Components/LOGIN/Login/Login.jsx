@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div className="pt-16">
+    <div className=" bg-white pt-16 ">
       {/* <Helmet>
           <title>Sumner Sports camp | Login</title>
         </Helmet> */}
@@ -72,7 +72,7 @@ const Login = () => {
                 type="email"
                 id="mail"
                 placeholder="Enter mail here"
-                className="w-full max-w-xs shadow-lg duration-700 hover:shadow-[#5572e6] shadow-[#dd7474] border-blue-600 input input-bordered"
+                className="w-full max-w-xs shadow-lg duration-700 bg-white hover:shadow-[#5572e6] shadow-[#dd7474] border-blue-600 input input-bordered"
                 {...register("email", { required: true })}
               />
               {errors.email && <span>This field is required</span>}
@@ -83,7 +83,7 @@ const Login = () => {
                 type="password"
                 id="pass"
                 placeholder="Enter your password"
-                className="w-full max-w-xs shadow-lg duration-700 hover:shadow-[#5572e6] shadow-[#dd7474] border-blue-600 input input-bordered "
+                className="w-full max-w-xs shadow-lg duration-700 bg-white hover:shadow-[#5572e6] shadow-[#dd7474] border-blue-600 input input-bordered "
                 {...register("password", { required: true })}
               />
               {errors.password && <span>This field is required</span>}
@@ -91,7 +91,7 @@ const Login = () => {
 
                 type="submit"
                 value="Login"
-                className="w-full max-w-xs my-5 duration-1000 shadow-lg hover:shadow-[#5572e6] shadow-[#dd7474] bg-[#F379A7] hover:bg-blue-400 input input-bordered btn"
+                className="w-full border-none text-[#1F2937] max-w-xs my-5 duration-1000 shadow-lg hover:shadow-[#5572e6] shadow-[#dd7474] bg-[#F379A7] hover:bg-blue-400 input input-bordered btn"
               />{" "}
             </form>
             <p className="text-xl text-blue-700 text-center">{error&&"Wrong Email and Password"}</p>

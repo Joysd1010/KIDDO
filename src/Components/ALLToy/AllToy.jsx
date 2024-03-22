@@ -12,7 +12,7 @@ function AllToy() {
   const showpiece = toys.filter((toy) => toy.category == "showpiece");
   
   return (
-    <div className="bg-white pt-24 md:pt-28 rounded-lg shadow-lg">
+    <div className=" text-[#1F2937] bg-white pt-24 md:pt-28 rounded-lg shadow-lg">
       <Tabs>
         <TabList className="md:px-10 px-3 flex">
           <Tab

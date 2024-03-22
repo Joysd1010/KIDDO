@@ -3,7 +3,7 @@ import { GrMail, GrMapLocation, GrPhone } from "react-icons/gr";
 
 const ContactUS = () => {
   return (
-    <div className=" pt-28">
+    <div className=" bg-white pt-28">
       <div>
         <h1 className="text-center font-bold text-3xl text-blue-600">
           Get in touch with us

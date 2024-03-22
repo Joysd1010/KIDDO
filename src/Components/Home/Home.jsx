@@ -8,7 +8,7 @@ import Offer from './Offer';
 
 const Home = () => {
     return (
-        <div className=' '>
+        <div className='bg-white'>
             <Banner />
             <Brands/>
             <SpecialService/>

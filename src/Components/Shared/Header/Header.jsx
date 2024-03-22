@@ -76,7 +76,7 @@ const Header = () => {
 
   // ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
-    <div className=" fixed z-20 w-screen bg-white px-3 md:px-10 py-1 ">
+    <div className=" text-[#1F2937] fixed z-20 w-screen bg-white px-3 md:px-10 py-1 ">
       {/* -----------------------Navbar--------------------------- */}
 
       <div className="flex items-center justify-between">
@@ -98,7 +98,7 @@ const Header = () => {
           <div>
             <div className="md:ml-5 ml-3 rounded-r-full rounded-l-full bg-[#F379A7] hover:bg-[#55D1E6]  flex items-center ">
               <input
-                className=" border-2 border-[#F379A7] hover:border-[#55D1E6]  w-28 md:w-full  pl-3 md:pr-16 py-2 rounded-l-full outline-none"
+                className=" border-2 bg-white border-[#F379A7] hover:border-[#55D1E6]  w-28 md:w-full  pl-3 md:pr-16 py-2 rounded-l-full outline-none"
                 onChange={filter}
                 onBlur={handleBlur}
                 onFocus={handlefocus}

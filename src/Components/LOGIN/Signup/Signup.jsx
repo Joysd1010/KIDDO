@@ -63,7 +63,7 @@ const Signup = () => {
   };
 
   return (
-    <div className=" pt-20 md:mx-20 px-3 md:px-10">
+    <div className=" bg-white pt-20px-3 md:px-28 ">
       <div className="grid grid-cols-1 md:grid-cols-2 items-center ">
         <div>
           <img src="https://i.postimg.cc/MTyTTzQn/ezgif-com-optimize-1.gif" />
@@ -76,14 +76,14 @@ const Signup = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
             <div className="form-control">
               <label className="label">
-                <span className="text-xl font-semibold label-text">Name</span>
+                <span className="text-xl text-[#1F2937] font-semibold label-text">Name</span>
               </label>
               <input
                 type="text"
                 {...register("name", { required: true })}
                 name="name"
                 placeholder="Name"
-                className="input input-bordered"
+                className="input bg-white input-bordered"
               />
               {errors.name && (
                 <span className="text-red-600">Name is required</span>
@@ -91,8 +91,8 @@ const Signup = () => {
             </div>
             <div className=" grid grid-cols-2 gap-2">
             <div className="form-control">
-              <label className="label">
-                <span className="text-xl font-semibold label-text">
+              <label className="label ">
+                <span className="text-xl text-[#1F2937] font-semibold label-text">
                   Photo URL
                 </span>
               </label>
@@ -100,7 +100,7 @@ const Signup = () => {
                 type="text"
                 {...register("photoURL", { required: true })}
                 placeholder="Photo URL"
-                className="input input-bordered"
+                className="input  bg-white input-bordered"
               />
               {errors.photoURL && (
                 <span className="text-red-600">Photo URL is required</span>
@@ -108,14 +108,14 @@ const Signup = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="text-xl font-semibold label-text">Email</span>
+                <span className="text-xl text-[#1F2937] font-semibold label-text">Email</span>
               </label>
               <input
                 type="email"
                 {...register("email", { required: true })}
                 name="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input bg-white  input-bordered"
               />
               {errors.email && (
                 <span className="text-red-600">Email is required</span>
@@ -124,7 +124,7 @@ const Signup = () => {
             <div className=" grid grid-cols-2 gap-2">
               <div className="form-control">
                 <label className="label">
-                  <span className="text-xl font-semibold label-text">
+                  <span className="text-xl text-[#1F2937] font-semibold label-text">
                     Password
                   </span>
                 </label>
@@ -137,7 +137,7 @@ const Signup = () => {
                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                   })}
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input  bg-white  input-bordered"
                 />
                 {errors.password?.type === "required" && (
                   <p className="text-red-500">Password is required</p>
@@ -159,7 +159,7 @@ const Signup = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="text-xl font-semibold label-text flex gap-2">
+                  <span className="text-xl text-[#1F2937] font-semibold label-text flex gap-2">
                     Confirm <span className="hidden md:block">Password</span> 
                   </span>
                 </label>
@@ -167,7 +167,7 @@ const Signup = () => {
                   type="password"
                   id="confirm_pass"
                   placeholder="Enter your confirm password"
-                  className="w-full max-w-xs input input-bordered "
+                  className="w-full  bg-white  max-w-xs input input-bordered "
                   {...register("confirmPassword", {
                     required: true,
                     validate: (value) =>

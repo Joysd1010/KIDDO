@@ -50,7 +50,7 @@ console.log(user.uid)
 
     return (
         <div>
-             <div className="mx-24 py-28">
+             <div className="bg-white mx-24 py-28">
       <form onSubmit={handleAddtoy}>
       
         

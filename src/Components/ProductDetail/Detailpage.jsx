@@ -89,14 +89,14 @@ const Detailpage = () => {
 
 
   return (
-    <div className="">
+    <div className="bg-white text-black">
     <div className="grid grid-cols-1 md:grid-cols-2 pt-28">
       <div className=" px-10">
         <img src={image_link} />
       </div>
       <div className="bg-blue-50 w-full px-10 py-5">
         <div>
-          <h1 className=" text-3xl font-semibold">{toy_name}</h1>
+          <h1 className=" text-3xl  font-semibold">{toy_name}</h1>
           <h1 className="text-4xl font-[900] py-3 text-pink-700 ">${price}</h1>
           <div className="flex gap-2 items-center py-2">
             <Rating
@@ -120,7 +120,7 @@ const Detailpage = () => {
             {description}
           </div>
           <div className=" flex justify-start gap-5">
-           {!admin&& <div onClick={handleCart} className=" btn rounded-2xl bg-pink-500  text-white hover:text-gray-900  hover:bg-blue-300">Add to Cart</div>}
+           {!admin&& <div onClick={handleCart} className=" btn border-none rounded-2xl bg-pink-500  text-white hover:text-gray-900  hover:bg-blue-300">Add to Cart</div>}
             
           </div>
 
