@@ -16,13 +16,13 @@ KiddoServer is an online toy shop application built with React, Firebase, and Vi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/kiddoserver.git
+   git clone https://github.com/Joysd1010/KIDDO.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd kiddo
+   cd KIDDO
    ```
 
 3. Install dependencies:
