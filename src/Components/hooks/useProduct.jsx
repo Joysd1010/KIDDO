@@ -4,7 +4,7 @@ const useProduct = () => {
 
     const [Product, SetProduct]=useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/toy")
+        fetch("https://kiddo-back-end.vercel.app/toy")
           .then((res) => res.json())
           .then((info) => {
             SetProduct(info);

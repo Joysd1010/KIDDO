@@ -48,7 +48,7 @@ const NewItemCard = ({ toy }) => {
         seller_name,
         seller_id,
       };
-      fetch("http://localhost:5000/cart", {
+      fetch("https://kiddo-back-end.vercel.app/cart", {
         method: "POST",
         headers: {
           "content-type": "application/json",

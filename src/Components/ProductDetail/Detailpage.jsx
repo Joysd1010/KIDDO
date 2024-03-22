@@ -50,7 +50,7 @@ const Detailpage = () => {
     seller_name,
     seller_id
       };
-      fetch("http://localhost:5000/cart", {
+      fetch("https://kiddo-back-end.vercel.app/cart", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -121,7 +121,7 @@ const Detailpage = () => {
           </div>
           <div className=" flex justify-start gap-5">
            {!admin&& <div onClick={handleCart} className=" btn rounded-2xl bg-pink-500  text-white hover:text-gray-900  hover:bg-blue-300">Add to Cart</div>}
-            {/* <div onClick={handleWishlist} className=" btn rounded-2xl text-pink-900 hover:text-blue-500 border-[3px] border-pink-500 hover:border-blue-500">Add to Wishlist ❤️</div> */}
+            
           </div>
 
           <h1 className=" py-3 flex items-center gap-2 text-lg font-semibold text-pink-700">Category : <span className=" flex items-center font-thin text-base text-pink-500">{category}</span></h1>

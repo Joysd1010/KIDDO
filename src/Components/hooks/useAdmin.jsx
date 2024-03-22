@@ -9,7 +9,7 @@ const useAdmin = () => {
 
   useEffect(() => {
     if (currentUser) {
-      fetch(`http://localhost:5000/user/${currentUser?.email}`)
+      fetch(`https://kiddo-back-end.vercel.app/user/${currentUser?.email}`)
         .then((res) => res.json())
         .then((data) => {
           setIsAdmin(data?.role === "admin"); 

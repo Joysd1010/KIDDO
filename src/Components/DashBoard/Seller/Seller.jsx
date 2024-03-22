@@ -25,7 +25,7 @@ console.log(user.uid)
         const Toy = { seller_name,toy_id,seller_id:user.uid,entry_date, email,toy_name,description ,rating,price,materials,category,image_link};
         console.log(user);
     
-        fetch('http://localhost:5000/toy', {
+        fetch('https://kiddo-back-end.vercel.app/toy', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
