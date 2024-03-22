@@ -94,7 +94,7 @@ const Login = () => {
                 className="w-full max-w-xs my-5 duration-1000 shadow-lg hover:shadow-[#5572e6] shadow-[#dd7474] bg-[#F379A7] hover:bg-blue-400 input input-bordered btn"
               />{" "}
             </form>
-            <p className="text-xl text-white">{error}</p>
+            <p className="text-xl text-blue-700 text-center">{error&&"Wrong Email and Password"}</p>
             <GoggleLogin></GoggleLogin>
             <p className="text-gray-600">
               Not Registered yet ?
