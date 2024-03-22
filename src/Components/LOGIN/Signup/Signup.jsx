@@ -34,7 +34,7 @@ const Signup = () => {
           role: role,
           email: data.email,
         };
-        fetch("https://kiddo-back-end-joysd1010.vercel.app/user", {
+        fetch("http://localhost:5000/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

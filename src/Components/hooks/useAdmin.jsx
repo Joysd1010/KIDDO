@@ -1,29 +1,30 @@
-// import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import useAuth from "./useAuth";
-// import useAxiosSecure from "./useAxiosSecure";
 
 const useAdmin = () => {
-    const { user } = useAuth();
-    const [logged,setLogged]=useState()
-    useEffect(()=>{
-      if (user) {
-        fetch(`https://kiddo-back-end-joysd1010.vercel.app/user/${user?.email}`)
-.then(res=>res.json())
-.then(data=>{
-  setLogged(data)
-})
-      }
+ 
+  const currentUser = useAuth().user;
 
+  const [isAdmin, setIsAdmin] = useState(false);
 
-
-    })
-if (logged?.role=='admin') {
-  return logged;
-}
-  
-
-   
+  useEffect(() => {
+    if (currentUser) {
+      fetch(`http://localhost:5000/user/${currentUser?.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setIsAdmin(data?.role === "admin"); 
+        })
+        .catch((error) => {
+          console.error("Error fetching user data:", error);
+          setIsAdmin(false); 
+        });
+    } else {
+      setIsAdmin(false); 
+    }
     
-  };
+  }, [currentUser]); 
+ 
+  return isAdmin;
+};
+
 export default useAdmin;

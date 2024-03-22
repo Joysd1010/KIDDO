@@ -13,17 +13,12 @@ import useAdmin from "../../hooks/useAdmin";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-    const [cart]=useCart();
-    const [wish]=useWish();
-
-    const navigate = useNavigate();
-
-    const navigateToDetail = (_id) => {
-      navigate(`/detail/${_id}`);
-    };
-const logged=useAdmin();
-
-
+  const [cart] = useCart();
+  const navigate = useNavigate();
+  const navigateToDetail = (_id) => {
+    navigate(`/detail/${_id}`);
+  };
+  const logged = useAdmin();
   const [search, setSearch] = useState(false);
   const [underline, setUnderline] = useState(false);
   const [underline1, setUnderline1] = useState(false);
@@ -53,25 +48,22 @@ const logged=useAdmin();
   const handleUnderlineremove3 = () => {
     setUnderline3(false);
   };
-const handlefocus=()=>{
-    setSearch(true)
-}
-const handleBlur=()=>{
-  setTimeout(() => {
-    setSearch(false);
-  }, 200)
-}
+  const handlefocus = () => {
+    setSearch(true);
+  };
+  const handleBlur = () => {
+    setTimeout(() => {
+      setSearch(false);
+    }, 200);
+  };
   const [ALLToy] = useProduct();
-
   const [data, setData] = useState([]);
-  
-
   const filter = (event) => {
     setData(
       ALLToy.filter((object) =>
         object.toy_name.toLowerCase().includes(event.target.value)
       )
-    )
+    );
     setSearch(true);
   };
   const [menu, setMenu] = useState(true);
@@ -81,7 +73,6 @@ const handleBlur=()=>{
   const handleMenuClose = () => {
     setMenu(true);
   };
-
 
   // ALLToy.map((toy,i)=>console.log(toy.toy_name,i))
   return (
@@ -96,7 +87,10 @@ const handleBlur=()=>{
             src="https://i.postimg.cc/NfzKswTG/KIDDO-logo.png"
             alt=""
           />
-          <NavLink to={"/"} className="text-gray-600 text-lg md:text-2xl font-bold">
+          <NavLink
+            to={"/"}
+            className="text-gray-600 text-lg md:text-2xl font-bold"
+          >
             KIDDO
           </NavLink>
 
@@ -121,22 +115,31 @@ const handleBlur=()=>{
               </button>
             </div>
             <div className=" duration-300 absolute">
-              {search&&data.slice(0, 10).map((toy) => (
-              
-                 <div onClick={()=>{navigateToDetail(toy._id)}}  key={toy._id} className=" hover:scale-105 duration-500 px-1 md:px-5 flex gap-3 p-2 border-2 border-[#F379A7] bg-white md:ml-5 ml-1 rounded-2xl" >
-                  <img className=" w-6 md:rounded-md" src={toy.image_link} />{" "}
-                  <h1 className=" font-medium">{toy.toy_name}</h1>
-                </div>
-                
-              ))}
+              {search &&
+                data.slice(0, 10).map((toy) => (
+                  <div
+                    onClick={() => {
+                      navigateToDetail(toy._id);
+                    }}
+                    key={toy._id}
+                    className=" hover:scale-105 duration-500 px-1 md:px-5 flex gap-3 p-2 border-2 border-[#F379A7] bg-white md:ml-5 ml-1 rounded-2xl"
+                  >
+                    <img className=" w-6 md:rounded-md" src={toy.image_link} />{" "}
+                    <h1 className=" font-medium">{toy.toy_name}</h1>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
-        
-        <div className={`flex md:static absolute  md:flex-row flex-col justify-between items-start md:items-center gap-2 md:gap-4 ${!menu?"top-20 right-1 md:px-0 px-5 bg-white py-2 duration-700 ":"top-20 -right-40 duration-700"}`}>
 
-      
-        <NavLink
+        <div
+          className={`flex md:static absolute  md:flex-row flex-col justify-between items-start md:items-center gap-2 md:gap-4 ${
+            !menu
+              ? "top-20 right-1 md:px-0 px-5 bg-white py-2 duration-700 "
+              : "top-20 -right-40 duration-700"
+          }`}
+        >
+          <NavLink
             onMouseEnter={handleUnderline}
             onMouseLeave={handleUnderlineremove}
             to={"/"}
@@ -171,7 +174,7 @@ const handleBlur=()=>{
               } mx-auto border-2 duration-500`}
             />
           </NavLink>
-        
+
           <NavLink
             onMouseEnter={handleUnderline2}
             onMouseLeave={handleUnderlineremove2}
@@ -189,49 +192,52 @@ const handleBlur=()=>{
               } mx-auto border-2 duration-500`}
             />
           </NavLink>
- 
 
+          <div className="flex items-center gap-3">
+            {logged ? (
+              <NavLink
+                onMouseEnter={handleUnderline3}
+                onMouseLeave={handleUnderlineremove3}
+                to={"Admin"}
+                className={({ isActive }) =>
+                  isActive
+                    ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600   ease-out duration-700"
+                    : " font-bold text-base md:text-xl px-5  duration-300"
+                }
+              >
+                <p>Admin Panel</p>{" "}
+                <hr
+                  className={` border-blue-900 w-0 ${
+                    underline3 && "w-[90px]"
+                  } mx-auto border-2 duration-500`}
+                />
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  isActive
+                    ? " font-bold text-base md:text-xl px-5 py-2 rounded-md text-blue-400  duration-300 "
+                    : " font-bold text-base md:text-xl px-5  duration-300 "
+                }
+              >
+                <PiShoppingCartSimpleThin size={30} />{" "}
+                {cart.length > 0 && (
+                  <p className=" text-xs bottom-9 left-4 text-center p-[1px] text-white rounded-full relative bg-pink-600">
+                    {cart?.length}
+                  </p>
+                )}
+              </NavLink>
+            )}
+          </div>
 
-              <div className="flex items-center gap-3">
-              {logged ?<NavLink
-            onMouseEnter={handleUnderline3}
-            onMouseLeave={handleUnderlineremove3}
-            to={"Admin"}
-            className={({ isActive }) =>
-              isActive
-                ? " font-bold text-base md:text-xl px-5 py-2 text-blue-600   ease-out duration-700"
-                : " font-bold text-base md:text-xl px-5  duration-300"
-            }
-          >
-            <p>Admin Panel</p>{" "}
-            <hr
-              className={` border-blue-900 w-0 ${
-                underline3 && "w-[90px]"
-              } mx-auto border-2 duration-500`}
-            />
-          </NavLink>:<NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              isActive
-                ? " font-bold text-base md:text-xl px-5 py-2 rounded-md text-blue-400  duration-300 "
-                : " font-bold text-base md:text-xl px-5  duration-300 "
-            }
-          
-            
-          >
-            <PiShoppingCartSimpleThin size={30} /> {cart.length>0&&<p className=" text-xs bottom-9 left-4 text-center p-[1px] text-white rounded-full relative bg-pink-600">{cart?.length}</p>}
-          </NavLink>} 
-                
-        
-              </div>
-          
           {user?.photoURL ? (
             <img
               src={user.photoURL}
               className=" w-16 rounded-full p-2 border-2 border-r-slate-800 border-l-slate-800"
             />
           ) : (
-            <FaUserAlt className="md:ml-0 ml-5 "/>
+            <FaUserAlt className="md:ml-0 ml-5 " />
           )}
 
           {!user ? (
@@ -256,16 +262,16 @@ const handleBlur=()=>{
           )}
         </div>
         <div className=" md:hidden ml-5">
-            {menu ? (
-              <div className="   rounded-lg">
-                <ImMenu onClick={handleMenuOpen} size={25} />
-              </div>
-            ) : (
-              <div className=" rotate-90 duration-300  rounded-lg">
-                <GiSplitCross onClick={handleMenuClose} size={25} />
-              </div>
-            )}
-          </div>
+          {menu ? (
+            <div className="   rounded-lg">
+              <ImMenu onClick={handleMenuOpen} size={25} />
+            </div>
+          ) : (
+            <div className=" rotate-90 duration-300  rounded-lg">
+              <GiSplitCross onClick={handleMenuClose} size={25} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

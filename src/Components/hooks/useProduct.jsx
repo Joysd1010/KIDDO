@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useProduct = () => {
 
     const [Product, SetProduct]=useState([]);
     useEffect(() => {
-        fetch("https://kiddo-back-end-joysd1010.vercel.app/toy")
+        fetch("http://localhost:5000/toy")
           .then((res) => res.json())
           .then((info) => {
             SetProduct(info);

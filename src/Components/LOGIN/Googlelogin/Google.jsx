@@ -20,7 +20,7 @@ const Google = () => {
           role: role,
           email: googleUser.email,
         };
-        fetch("https://kiddo-back-end-joysd1010.vercel.app/user", {
+        fetch("http://localhost:5000/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

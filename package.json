@@ -29,6 +29,7 @@
     "react-tabs": "^6.0.2",
     "react-tsparticles": "^2.12.2",
     "sort-by": "^1.2.0",
+    "react-to-print": "^2.15.1",
     "sweetalert2": "^11.7.31",
     "tsparticles": "^2.12.0"
   },

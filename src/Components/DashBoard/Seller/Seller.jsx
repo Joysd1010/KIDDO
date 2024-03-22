@@ -1,18 +1,19 @@
-import React from 'react';
+// import React from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
 
 const Seller = () => {
 const {user}=useAuth()
-let indexToy=32
-let seller_id=12356
+
+console.log(user.uid)
+
     const handleAddtoy = event => {
         event.preventDefault();
         const form = event.target;
         const seller_name =user.displayName;
-        const email = user.mail;
+        const email = user.email;
         const toy_name = form.toyName.value;
-        const toy_id=indexToy++;
+        const toy_id=Math.floor(Math.random() * 10000000);
         const price = form.price.value;
         const materials = form.material.value;
         const category = form.category.value;
@@ -21,10 +22,10 @@ let seller_id=12356
         const image_link = form.image.value;
         const entry_date= new Date().getDate()
 
-        const Toy = { seller_name,toy_id,seller_id,entry_date, email,toy_name,description ,rating,price,materials,category,image_link};
+        const Toy = { seller_name,toy_id,seller_id:user.uid,entry_date, email,toy_name,description ,rating,price,materials,category,image_link};
         console.log(user);
     
-        fetch('https://kiddo-back-end-joysd1010.vercel.app/toy', {
+        fetch('http://localhost:5000/toy', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -38,7 +39,7 @@ let seller_id=12356
                 Swal.fire({
                     icon: 'success',
                     title: 'Item Added',
-                    text: 'This toy is added to the database',
+                    text: 'This toy is added to the Market Place',
                     
                   })
               form.reset();
@@ -51,38 +52,8 @@ let seller_id=12356
         <div>
              <div className="mx-24 py-28">
       <form onSubmit={handleAddtoy}>
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="email"
-            name="floating_email"
-            id="seller_email"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor="seller_email"
-            className="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-           Seller Email address
-          </label>
-        </div>
-        <div className="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="floating_password"
-            id="sellerName"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor="sellerName"
-            className="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Seller Name
-          </label>
-        </div>
+      
+        
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
