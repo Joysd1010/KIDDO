@@ -6,9 +6,8 @@ KiddoServer is an online toy shop application built with React, Firebase, and Vi
 
 - User authentication: Users can create accounts and securely log in to access the toy shop.
 - Toy purchasing: Users can browse through a selection of toys, add them to their cart, and proceed with the purchase.
-- Admin panel: Admins have access to a dedicated panel for managing the toy inventory, user accounts, and sales data.
-- Seller panel: Sellers can add new toys to the inventory and track their sales through a specialized panel.
-- Private routes: Certain routes are protected and accessible only to authenticated users, admins, or sellers.
+- Seller panel: Sellers can add new toys to the inventory through a specialized panel.
+- Private routes: Certain routes are protected and accessible only to authenticated users or sellers.
 - Receipt generation: Upon completing a purchase, users receive a digital receipt/invoice, which can be printed as a PDF for their records.
 
 ## Getting Started
@@ -47,7 +46,7 @@ KiddoServer is an online toy shop application built with React, Firebase, and Vi
 
 - Sign up for an account using your email and password.
 - Browse through the available toys, add them to your cart, and proceed with the purchase.
-- Sellers and admins can log in using the provided credentials (`admin@boss.com`, password: `ABCabc123@@`) to access their respective panels.
+- Sellers can log in using the provided credentials Email: ```bash admin@boss.com```, password: ```bash ABCabc123@@``` to access their respective panels.
 - Generate receipts/invoices for completed purchases and print them as PDFs for your records.
 
 ## Technologies Used
